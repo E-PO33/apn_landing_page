@@ -3842,6 +3842,12 @@
   }
 
   @media (width >= 48rem) {
+    .md\:hidden {
+      display: none;
+    }
+  }
+
+  @media (width >= 48rem) {
     .md\:w-\[var\(--radix-navigation-menu-viewport-width\)\] {
       width: var(--radix-navigation-menu-viewport-width);
     }
@@ -3959,6 +3965,24 @@
 
   @media (width >= 48rem) {
     .after\:md\:hidden:after {
+      display: none;
+    }
+  }
+
+  @media (width >= 64rem) {
+    .lg\:block {
+      display: block;
+    }
+  }
+
+  @media (width >= 64rem) {
+    .lg\:flex {
+      display: flex;
+    }
+  }
+
+  @media (width >= 64rem) {
+    .lg\:hidden {
       display: none;
     }
   }
@@ -4900,5 +4924,22 @@
 
   20%, 50% {
     opacity: 0;
+  }
+}
+
+/* Platform screenshot collage: stacked & centered below lg, absolute art collage at lg+ */
+@media (max-width: 63.9375rem) {
+  .platform-collage {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .platform-collage .platform-card {
+    position: static;
+    width: 100%;
+    max-width: 26rem;
+    margin: 0 auto;
+    transform: none;
   }
 }
