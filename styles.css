@@ -1466,6 +1466,12 @@
     margin-block-end: calc(calc(var(--spacing) * 6) * calc(1 - var(--tw-space-y-reverse)));
   }
 
+  :where(.space-y-14 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * 14) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 14) * calc(1 - var(--tw-space-y-reverse)));
+  }
+
   .gap-x-6 {
     column-gap: calc(var(--spacing) * 6);
   }
@@ -5159,5 +5165,51 @@ html {
   }
   #mobile-menu {
     display: none;
+  }
+}
+
+/* Module/content pages + FAQ + form: utilities missing from the original compiled set */
+.py-20 {
+  padding-block: calc(var(--spacing) * 20);
+}
+
+.pb-16 {
+  padding-bottom: calc(var(--spacing) * 16);
+}
+
+.p-10 {
+  padding: calc(var(--spacing) * 10);
+}
+
+.mt-10 {
+  margin-top: calc(var(--spacing) * 10);
+}
+
+:where(.space-y-5 > :not(:last-child)) {
+  --tw-space-y-reverse: 0;
+  margin-block-start: calc(calc(var(--spacing) * 5) * var(--tw-space-y-reverse));
+  margin-block-end: calc(calc(var(--spacing) * 5) * calc(1 - var(--tw-space-y-reverse)));
+}
+
+.leading-\[1\.2\] {
+  line-height: 1.2;
+}
+
+@media (width >= 48rem) {
+  .md\:text-3xl {
+    font-size: 1.875rem;
+    line-height: calc(2.25 / 1.875);
+  }
+}
+
+@media (width >= 48rem) {
+  .md\:p-10 {
+    padding: calc(var(--spacing) * 10);
+  }
+}
+
+@media (width >= 48rem) {
+  .md\:p-14 {
+    padding: calc(var(--spacing) * 14);
   }
 }
