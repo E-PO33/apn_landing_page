@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="preload" as="image" href="sce-logo.jpg" />
+    <link rel="preload" as="image" href="apn-logo.svg" />
     <link rel="stylesheet" href="styles.css" />
     <script src="i18n.js" defer></script>
     <link
@@ -44,17 +44,7 @@
             class="glass rounded-2xl px-4 py-2.5 flex items-center justify-between shadow-soft"
           >
             <a href="#" class="flex items-center gap-2.5"
-              ><img src="sce-logo.jpg" alt="SCE" class="h-9 w-auto" />
-              <div
-                class="hidden sm:flex items-center gap-2 pl-3 border-l border-border"
-              >
-                <span class="font-semibold tracking-tight text-ink">APN</span
-                ><span
-                  class="text-[10px] text-ink-soft uppercase tracking-widest"
-                  data-i18n="brand.subtitle"
-                  >Platforma</span
-                >
-              </div></a
+              ><img src="apn-logo.svg" alt="APN" class="h-9 w-auto" /></a
             >
             <nav
               class="header-nav items-center gap-6 text-sm text-ink-soft"
@@ -1641,15 +1631,21 @@
               <div class="rounded-xl bg-surface-elevated border border-border shadow-soft px-3 py-2 text-sm font-medium text-ink" data-i18n="zasto.node_warehouse">Magacin</div>
               <div class="rounded-xl bg-surface-elevated border border-border shadow-soft px-3 py-2 text-sm font-medium text-ink" data-i18n="zasto.node_admin">Administracija</div>
               <div class="rounded-xl bg-surface-elevated border border-border shadow-soft px-3 py-2 text-sm font-medium text-ink" data-i18n="zasto.node_finance">Finansije</div>
-              <div class="rounded-xl bg-surface-elevated border border-border shadow-soft px-3 py-2 text-sm font-medium text-ink" data-i18n="zasto.node_fleet">Fleet</div>
+              <div class="rounded-xl bg-surface-elevated border border-border shadow-soft px-3 py-2 text-sm font-medium text-ink" data-i18n="zasto.node_fleet">Vozni park</div>
               <div class="rounded-xl amber-gradient text-white shadow-soft px-3 py-2 text-sm font-semibold" data-i18n="hero.badge">APN Platforma</div>
             </div>
             <div class="mt-20 relative hidden md:block">
-              <div class="mx-auto max-w-4xl relative aspect-[16/9]">
+              <div id="zasto-orbit" class="mx-auto max-w-4xl relative aspect-[16/9]">
                 <div
                   class="absolute inset-0 rounded-full bg-gradient-to-br from-primary/10 via-transparent to-amber-glow/10 blur-3xl"
                 ></div>
+                <svg
+                  id="zasto-orbit-lines"
+                  class="absolute inset-0 z-0 w-full h-full pointer-events-none"
+                  aria-hidden="true"
+                ></svg>
                 <div
+                  id="zasto-hub"
                   class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
                 >
                   <div
@@ -1668,7 +1664,7 @@
                   </div>
                 </div>
                 <div
-                  class="absolute"
+                  class="zasto-node absolute z-10"
                   style="left: 50%; top: 10%; transform: translate(-50%, -50%)"
                 >
                   <div
@@ -1699,7 +1695,7 @@
                   </div>
                 </div>
                 <div
-                  class="absolute"
+                  class="zasto-node absolute z-10"
                   style="
                     left: 78.2842712474619%;
                     top: 21.7157287525381%;
@@ -1732,7 +1728,7 @@
                   </div>
                 </div>
                 <div
-                  class="absolute"
+                  class="zasto-node absolute z-10"
                   style="left: 90%; top: 50%; transform: translate(-50%, -50%)"
                 >
                   <div
@@ -1763,7 +1759,7 @@
                   </div>
                 </div>
                 <div
-                  class="absolute"
+                  class="zasto-node absolute z-10"
                   style="
                     left: 78.2842712474619%;
                     top: 78.2842712474619%;
@@ -1803,7 +1799,7 @@
                   </div>
                 </div>
                 <div
-                  class="absolute"
+                  class="zasto-node absolute z-10"
                   style="left: 50%; top: 90%; transform: translate(-50%, -50%)"
                 >
                   <div
@@ -1836,7 +1832,7 @@
                   </div>
                 </div>
                 <div
-                  class="absolute"
+                  class="zasto-node absolute z-10"
                   style="
                     left: 21.7157287525381%;
                     top: 78.2842712474619%;
@@ -1874,7 +1870,7 @@
                   </div>
                 </div>
                 <div
-                  class="absolute"
+                  class="zasto-node absolute z-10"
                   style="
                     left: 10%;
                     top: 50.00000000000001%;
@@ -1911,7 +1907,7 @@
                   </div>
                 </div>
                 <div
-                  class="absolute"
+                  class="zasto-node absolute z-10"
                   style="
                     left: 21.71572875253809%;
                     top: 21.7157287525381%;
@@ -1943,102 +1939,10 @@
                     ><span
                       class="text-sm font-medium text-ink whitespace-nowrap"
                       data-i18n="zasto.node_fleet"
-                      >Fleet</span
+                      >Vozni park</span
                     >
                   </div>
                 </div>
-                <svg
-                  class="absolute inset-0 w-full h-full"
-                  viewBox="0 0 100 100"
-                  preserveAspectRatio="none"
-                >
-                  <line
-                    x1="50"
-                    y1="50"
-                    x2="50"
-                    y2="10"
-                    stroke="url(#lg)"
-                    stroke-width="0.2"
-                    stroke-dasharray="0.6 0.6"
-                  ></line>
-                  <line
-                    x1="50"
-                    y1="50"
-                    x2="78.2842712474619"
-                    y2="21.7157287525381"
-                    stroke="url(#lg)"
-                    stroke-width="0.2"
-                    stroke-dasharray="0.6 0.6"
-                  ></line>
-                  <line
-                    x1="50"
-                    y1="50"
-                    x2="90"
-                    y2="50"
-                    stroke="url(#lg)"
-                    stroke-width="0.2"
-                    stroke-dasharray="0.6 0.6"
-                  ></line>
-                  <line
-                    x1="50"
-                    y1="50"
-                    x2="78.2842712474619"
-                    y2="78.2842712474619"
-                    stroke="url(#lg)"
-                    stroke-width="0.2"
-                    stroke-dasharray="0.6 0.6"
-                  ></line>
-                  <line
-                    x1="50"
-                    y1="50"
-                    x2="50"
-                    y2="90"
-                    stroke="url(#lg)"
-                    stroke-width="0.2"
-                    stroke-dasharray="0.6 0.6"
-                  ></line>
-                  <line
-                    x1="50"
-                    y1="50"
-                    x2="21.7157287525381"
-                    y2="78.2842712474619"
-                    stroke="url(#lg)"
-                    stroke-width="0.2"
-                    stroke-dasharray="0.6 0.6"
-                  ></line>
-                  <line
-                    x1="50"
-                    y1="50"
-                    x2="10"
-                    y2="50.00000000000001"
-                    stroke="url(#lg)"
-                    stroke-width="0.2"
-                    stroke-dasharray="0.6 0.6"
-                  ></line>
-                  <line
-                    x1="50"
-                    y1="50"
-                    x2="21.71572875253809"
-                    y2="21.7157287525381"
-                    stroke="url(#lg)"
-                    stroke-width="0.2"
-                    stroke-dasharray="0.6 0.6"
-                  ></line>
-                  <defs>
-                    <linearGradient id="lg" x1="0" x2="1">
-                      <stop
-                        offset="0%"
-                        stop-color="oklch(0.62 0.19 250)"
-                        stop-opacity="0.6"
-                      ></stop>
-                      <stop
-                        offset="100%"
-                        stop-color="oklch(0.78 0.16 235)"
-                        stop-opacity="0.2"
-                      ></stop>
-                    </linearGradient>
-                  </defs>
-                </svg>
               </div>
             </div>
           </div>
@@ -4213,109 +4117,107 @@
             </div>
           </div>
         </section>
-        <section id="faq" class="py-28 bg-surface/50 border-y border-border">
+        <section id="faq" class="faq-section">
           <div class="mx-auto w-full max-w-7xl px-6 lg:px-8">
-            <div
-              class="flex flex-col items-center text-center gap-4 max-w-3xl mx-auto"
-            >
-              <div
-                class="inline-flex items-center gap-2 rounded-full border border-border bg-surface-elevated/80 px-3 py-1 text-xs font-medium text-ink-soft shadow-soft"
-              >
-                <span class="h-1.5 w-1.5 rounded-full bg-primary"></span
-                ><span data-i18n="faq.badge">Pitanja i odgovori</span>
+            <h2 class="faq-section-heading" data-i18n="faq.title">FAQ's</h2>
+            <div class="faq-cols">
+              <div class="faq-list">
+                <div class="faq-item">
+                  <button class="faq-q" type="button" aria-expanded="false">
+                    <span data-i18n="faq.q1.question"
+                      >Koji softver koristiti za putne i radne naloge?</span
+                    ><span class="faq-icon" aria-hidden="true">+</span>
+                  </button>
+                  <div class="faq-a">
+                    <p data-i18n="faq.q1.answer">
+                      APN je jedinstven softver za putne naloge i radne naloge —
+                      umjesto dvije odvojene aplikacije, oba procesa rade u istoj
+                      platformi, sa zajedničkim korisnicima, vozilima i evidencijom.
+                      To eliminira duplo unošenje podataka i olakšava internu
+                      kontrolu.
+                    </p>
+                  </div>
+                </div>
+                <div class="faq-item">
+                  <button class="faq-q" type="button" aria-expanded="false">
+                    <span data-i18n="faq.q2.question"
+                      >Da li su digitalni putni nalozi u APN-u validni za
+                      inspekciju?</span
+                    ><span class="faq-icon" aria-hidden="true">+</span>
+                  </button>
+                  <div class="faq-a">
+                    <p data-i18n="faq.q2.answer">
+                      Da. Digitalni putni nalozi u APN-u sadrže sve podatke koje
+                      zakonodavac traži — svrhu puta, destinaciju, kilometražu,
+                      gorivo i odobrenja — uz digitalni potpis i PDF arhivu spremnu
+                      za inspekciju u bilo kojem trenutku.
+                    </p>
+                  </div>
+                </div>
+                <div class="faq-item">
+                  <button class="faq-q" type="button" aria-expanded="false">
+                    <span data-i18n="faq.q3.question"
+                      >Kako APN pomaže kod upravljanja flotom?</span
+                    ><span class="faq-icon" aria-hidden="true">+</span>
+                  </button>
+                  <div class="faq-a">
+                    <p data-i18n="faq.q3.answer">
+                      Fleet management modul je nadograđen na Asset Management i
+                      prati registraciju, osiguranje, servise, kilometražu i
+                      dodjelu vozila vozačima. Podsjetnici upozoravaju sedmicama
+                      unaprijed na istek registracije ili servisa, tako da
+                      upravljanje voznim parkom postaje proaktivno, ne reaktivno.
+                    </p>
+                  </div>
+                </div>
               </div>
-              <h2
-                class="text-4xl md:text-5xl font-semibold tracking-tight text-ink leading-[1.1]"
-                data-i18n="faq.title"
-              >
-                Često postavljana pitanja (FAQ)
-              </h2>
-              <p class="text-lg text-ink-soft leading-relaxed" data-i18n="faq.subtitle">
-                Odgovori na najčešća pitanja o putnim i radnim nalozima, Asset
-                Managementu, Fleet Managementu i sigurnosti u APN-u.
-              </p>
-            </div>
-            <div class="mt-16 max-w-3xl mx-auto space-y-4">
-              <div
-                class="rounded-2xl border border-border bg-surface-elevated p-6 shadow-soft"
-              >
-                <h3 class="text-base font-semibold text-ink" data-i18n="faq.q1.question">
-                  Koji softver koristiti za putne i radne naloge?
-                </h3>
-                <p class="mt-2 text-sm text-ink-soft leading-relaxed" data-i18n="faq.q1.answer">
-                  APN je jedinstven softver za putne naloge i radne naloge —
-                  umjesto dvije odvojene aplikacije, oba procesa rade u istoj
-                  platformi, sa zajedničkim korisnicima, vozilima i evidencijom.
-                  To eliminira duplo unošenje podataka i olakšava internu
-                  kontrolu.
-                </p>
-              </div>
-              <div
-                class="rounded-2xl border border-border bg-surface-elevated p-6 shadow-soft"
-              >
-                <h3 class="text-base font-semibold text-ink" data-i18n="faq.q2.question">
-                  Da li su digitalni putni nalozi u APN-u validni za inspekciju?
-                </h3>
-                <p class="mt-2 text-sm text-ink-soft leading-relaxed" data-i18n="faq.q2.answer">
-                  Da. Digitalni putni nalozi u APN-u sadrže sve podatke koje
-                  zakonodavac traži — svrhu puta, destinaciju, kilometražu,
-                  gorivo i odobrenja — uz digitalni potpis i PDF arhivu spremnu
-                  za inspekciju u bilo kojem trenutku.
-                </p>
-              </div>
-              <div
-                class="rounded-2xl border border-border bg-surface-elevated p-6 shadow-soft"
-              >
-                <h3 class="text-base font-semibold text-ink" data-i18n="faq.q3.question">
-                  Kako APN pomaže kod upravljanja flotom?
-                </h3>
-                <p class="mt-2 text-sm text-ink-soft leading-relaxed" data-i18n="faq.q3.answer">
-                  Fleet management modul je nadograđen na Asset Management i
-                  prati registraciju, osiguranje, servise, kilometražu i
-                  dodjelu vozila vozačima. Podsjetnici upozoravaju sedmicama
-                  unaprijed na istek registracije ili servisa, tako da
-                  upravljanje voznim parkom postaje proaktivno, ne reaktivno.
-                </p>
-              </div>
-              <div
-                class="rounded-2xl border border-border bg-surface-elevated p-6 shadow-soft"
-              >
-                <h3 class="text-base font-semibold text-ink" data-i18n="faq.q4.question">
-                  Može li se APN koristiti za asset management cijele
-                  kompanije?
-                </h3>
-                <p class="mt-2 text-sm text-ink-soft leading-relaxed" data-i18n="faq.q4.answer">
-                  Da. APN je white-label asset management sistem koji pokriva
-                  vozila, IT opremu, alate, namještaj i industrijsku opremu u
-                  jednom registru, sa klasama, amortizacijom i garancijama po
-                  jedinici imovine — ne samo za vozni park.
-                </p>
-              </div>
-              <div
-                class="rounded-2xl border border-border bg-surface-elevated p-6 shadow-soft"
-              >
-                <h3 class="text-base font-semibold text-ink" data-i18n="faq.q5.question">
-                  Da li APN podržava različite uloge i dozvole?
-                </h3>
-                <p class="mt-2 text-sm text-ink-soft leading-relaxed" data-i18n="faq.q5.answer">
-                  Da. User Management modul omogućava granularne dozvole po
-                  timovima, lokacijama i odjelima, uz kompletan audit trail
-                  svake akcije. Multi-company podrška dodatno odvaja pristup i
-                  podatke između više firmi u istom sistemu.
-                </p>
-              </div>
-              <div
-                class="rounded-2xl border border-border bg-surface-elevated p-6 shadow-soft"
-              >
-                <h3 class="text-base font-semibold text-ink" data-i18n="faq.q6.question">
-                  Koliko traje implementacija APN-a?
-                </h3>
-                <p class="mt-2 text-sm text-ink-soft leading-relaxed" data-i18n="faq.q6.answer">
-                  Implementacija traje za dane, ne mjesece — postavljanje
-                  osnovnih modula (putni nalozi, radni nalozi, registar
-                  imovine) tipično je spremno za korištenje unutar prve
-                  sedmice, uz posvećen success tim za onboarding.
-                </p>
+              <div class="faq-list">
+                <div class="faq-item">
+                  <button class="faq-q" type="button" aria-expanded="false">
+                    <span data-i18n="faq.q4.question"
+                      >Može li se APN koristiti za asset management cijele
+                      kompanije?</span
+                    ><span class="faq-icon" aria-hidden="true">+</span>
+                  </button>
+                  <div class="faq-a">
+                    <p data-i18n="faq.q4.answer">
+                      Da. APN je white-label asset management sistem koji pokriva
+                      vozila, IT opremu, alate, namještaj i industrijsku opremu u
+                      jednom registru, sa klasama, amortizacijom i garancijama po
+                      jedinici imovine — ne samo za vozni park.
+                    </p>
+                  </div>
+                </div>
+                <div class="faq-item">
+                  <button class="faq-q" type="button" aria-expanded="false">
+                    <span data-i18n="faq.q5.question"
+                      >Da li APN podržava različite uloge i dozvole?</span
+                    ><span class="faq-icon" aria-hidden="true">+</span>
+                  </button>
+                  <div class="faq-a">
+                    <p data-i18n="faq.q5.answer">
+                      Da. User Management modul omogućava granularne dozvole po
+                      timovima, lokacijama i odjelima, uz kompletan audit trail
+                      svake akcije. Multi-company podrška dodatno odvaja pristup i
+                      podatke između više firmi u istom sistemu.
+                    </p>
+                  </div>
+                </div>
+                <div class="faq-item">
+                  <button class="faq-q" type="button" aria-expanded="false">
+                    <span data-i18n="faq.q6.question"
+                      >Koliko traje implementacija APN-a?</span
+                    ><span class="faq-icon" aria-hidden="true">+</span>
+                  </button>
+                  <div class="faq-a">
+                    <p data-i18n="faq.q6.answer">
+                      Implementacija traje za dane, ne mjesece — postavljanje
+                      osnovnih modula (putni nalozi, radni nalozi, registar
+                      imovine) tipično je spremno za korištenje unutar prve
+                      sedmice, uz posvećen success tim za onboarding.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -4666,28 +4568,12 @@
       </main>
       <footer class="border-t border-border py-16 bg-surface/40">
         <div class="mx-auto w-full max-w-7xl px-6 lg:px-8">
-          <div class="grid md:grid-cols-7 gap-10">
-            <div class="md:col-span-2">
+          <div class="grid grid-cols-2 gap-8 md:grid-cols-5">
+            <div class="col-span-2 md:col-span-1">
               <div class="flex items-center gap-3">
-                <img src="sce-logo.jpg" alt="SCE" class="h-10 w-auto" />
-                <div class="pl-3 border-l border-border">
-                  <div class="font-semibold text-ink leading-tight">APN</div>
-                  <div
-                    class="text-[10px] text-ink-soft uppercase tracking-widest"
-                  >
-                    by SCE
-                  </div>
-                </div>
-              </div>
-              <p class="mt-4 text-sm text-ink-soft max-w-xs" data-i18n="footer.description">
-                APN — Operativni sistem za kompanije koje upravljaju ljudima,
-                imovinom i terenskim operacijama.
-              </p>
-              <div class="mt-6 text-xs text-ink-soft/70" data-i18n="footer.address">
-                Sarajevo · Bosna i Hercegovina
+                <img src="apn-logo.svg" alt="APN" class="h-10 w-auto" />
               </div>
             </div>
-            <div class="grid grid-cols-2 gap-x-6 gap-y-10 md:contents">
             <div>
               <div
                 class="text-xs font-semibold text-ink uppercase tracking-wider"
@@ -4708,6 +4594,16 @@
                 <li>
                   <a class="hover:text-ink transition" href="fleet-management/" data-i18n="footer.link_fleet_management">Fleet Management</a>
                 </li>
+              </ul>
+            </div>
+            <div>
+              <div
+                class="text-xs font-semibold text-ink uppercase tracking-wider"
+                data-i18n="nav.moduli"
+              >
+                Moduli
+              </div>
+              <ul class="mt-4 space-y-2.5 text-sm text-ink-soft">
                 <li>
                   <a class="hover:text-ink transition" href="user-management/" data-i18n="footer.link_user_management">User Management</a>
                 </li>
@@ -4725,65 +4621,14 @@
             <div>
               <div
                 class="text-xs font-semibold text-ink uppercase tracking-wider"
-                data-i18n="footer.col_solutions"
-              >
-                Rješenja
-              </div>
-              <ul class="mt-4 space-y-2.5 text-sm text-ink-soft">
-                <li>
-                  <a class="hover:text-ink transition" href="#" data-i18n="footer.link_auto_kuce">Auto kuće</a>
-                </li>
-                <li>
-                  <a class="hover:text-ink transition" href="#" data-i18n="footer.link_vozni_park">Vozni park</a>
-                </li>
-                <li>
-                  <a class="hover:text-ink transition" href="#" data-i18n="footer.link_rent_a_car">Rent-a-Car</a>
-                </li>
-                <li>
-                  <a class="hover:text-ink transition" href="#" data-i18n="footer.link_leasing">Leasing</a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <div
-                class="text-xs font-semibold text-ink uppercase tracking-wider"
-                data-i18n="footer.col_industries"
-              >
-                Industrije
-              </div>
-              <ul class="mt-4 space-y-2.5 text-sm text-ink-soft">
-                <li>
-                  <a class="hover:text-ink transition" href="#" data-i18n="industries.public_institutions">Javne ustanove</a>
-                </li>
-                <li>
-                  <a class="hover:text-ink transition" href="#" data-i18n="industries.service_companies">Servisne kompanije</a>
-                </li>
-                <li>
-                  <a class="hover:text-ink transition" href="#" data-i18n="industries.telecom">Telekom</a>
-                </li>
-                <li>
-                  <a class="hover:text-ink transition" href="#" data-i18n="industries.banks">Banke</a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <div
-                class="text-xs font-semibold text-ink uppercase tracking-wider"
                 data-i18n="footer.col_company"
               >
                 Kompanija
               </div>
               <ul class="mt-4 space-y-2.5 text-sm text-ink-soft">
                 <li>
-                  <a class="hover:text-ink transition" href="#" data-i18n="footer.link_onama">O nama</a>
-                </li>
-                <li>
-                  <a class="hover:text-ink transition" href="#" data-i18n="footer.link_karijere">Karijere</a>
-                </li>
-                <li>
                   <a class="hover:text-ink transition" href="#kontakt" data-i18n="nav.kontakt">Kontakt</a>
                 </li>
-                <li><a class="hover:text-ink transition" href="#" data-i18n="footer.link_press">Press</a></li>
               </ul>
             </div>
             <div>
@@ -4795,33 +4640,18 @@
               </div>
               <ul class="mt-4 space-y-2.5 text-sm text-ink-soft">
                 <li>
-                  <a class="hover:text-ink transition" href="#" data-i18n="footer.link_privatnost">Privatnost</a>
-                </li>
-                <li>
-                  <a class="hover:text-ink transition" href="#" data-i18n="footer.link_uvjeti">Uslovi korištenja</a>
-                </li>
-                <li>
                   <a class="hover:text-ink transition" href="sigurnost/" data-i18n="footer.link_sigurnost_compliance">Sigurnost i compliance</a>
                 </li>
-                <li><a class="hover:text-ink transition" href="#" data-i18n="footer.link_dpa">DPA</a></li>
               </ul>
-            </div>
             </div>
           </div>
           <div
-            class="mt-14 border-t border-border pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-ink-soft"
+            class="mt-10 border-t border-border pt-6 text-center text-xs text-ink-soft"
           >
-            <div>
-              ©
-              <!-- -->2026<!-- -->
-              SCE — Security · Consulting · Education.
-              <span data-i18n="footer.rights">Sva prava zadržana.</span>
-            </div>
-            <div class="flex items-center gap-4">
-              <a href="#" class="hover:text-ink" data-i18n="footer.link_privatnost">Privatnost</a
-              ><a href="#" class="hover:text-ink" data-i18n="footer.link_uvjeti">Uslovi korištenja</a
-              ><a href="#kontakt" class="hover:text-ink" data-i18n="nav.kontakt">Kontakt</a>
-            </div>
+            ©
+            <!-- -->2026<!-- -->
+            SCE — Security · Consulting · Education.
+            <span data-i18n="footer.rights">Sva prava zadržana.</span>
           </div>
         </div>
       </footer>
@@ -4882,6 +4712,147 @@
           success.classList.add("is-visible");
           success.scrollIntoView({ behavior: "smooth", block: "center" });
         });
+      })();
+
+      (function () {
+        document.querySelectorAll(".faq-q").forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            var answer = btn.closest(".faq-item").querySelector(".faq-a");
+            var icon = btn.querySelector(".faq-icon");
+            var isOpen = btn.getAttribute("aria-expanded") === "true";
+
+            document.querySelectorAll(".faq-q").forEach(function (other) {
+              if (other === btn) return;
+              other.setAttribute("aria-expanded", "false");
+              other.closest(".faq-item").querySelector(".faq-a").classList.remove("is-open");
+              var otherIcon = other.querySelector(".faq-icon");
+              if (otherIcon) otherIcon.textContent = "+";
+            });
+
+            btn.setAttribute("aria-expanded", String(!isOpen));
+            answer.classList.toggle("is-open", !isOpen);
+            if (icon) icon.textContent = isOpen ? "+" : "\u2212";
+          });
+        });
+      })();
+
+      (function () {
+        var orbit = document.getElementById("zasto-orbit");
+        var svg = document.getElementById("zasto-orbit-lines");
+        var hub = document.getElementById("zasto-hub");
+        if (!orbit || !svg || !hub) return;
+
+        var ns = "http://www.w3.org/2000/svg";
+        var gap = 4;
+
+        function localRect(el, origin) {
+          var r = el.getBoundingClientRect();
+          return {
+            left: r.left - origin.left,
+            top: r.top - origin.top,
+            width: r.width,
+            height: r.height,
+            cx: r.left - origin.left + r.width / 2,
+            cy: r.top - origin.top + r.height / 2,
+          };
+        }
+
+        function edgePoint(rect, towardX, towardY) {
+          var dx = towardX - rect.cx;
+          var dy = towardY - rect.cy;
+          var hw = rect.width / 2;
+          var hh = rect.height / 2;
+          var sx = Math.abs(dx) < 1e-9 ? Infinity : hw / Math.abs(dx);
+          var sy = Math.abs(dy) < 1e-9 ? Infinity : hh / Math.abs(dy);
+          var t = Math.min(sx, sy);
+          return { x: rect.cx + dx * t, y: rect.cy + dy * t };
+        }
+
+        function clearLines() {
+          Array.prototype.slice.call(svg.querySelectorAll("line")).forEach(function (line) {
+            line.remove();
+          });
+        }
+
+        function draw() {
+          if (window.matchMedia("(max-width: 767px)").matches) {
+            clearLines();
+            return;
+          }
+
+          var origin = orbit.getBoundingClientRect();
+          var w = origin.width;
+          var h = origin.height;
+          if (w < 2 || h < 2) return;
+
+          svg.setAttribute("viewBox", "0 0 " + w + " " + h);
+          svg.setAttribute("width", String(w));
+          svg.setAttribute("height", String(h));
+          clearLines();
+
+          var hubCard = hub.querySelector(".glass") || hub.firstElementChild;
+          if (!hubCard) return;
+          var hubRect = localRect(hubCard, origin);
+          var nodes = orbit.querySelectorAll(".zasto-node");
+
+          nodes.forEach(function (node) {
+            var card = node.firstElementChild;
+            if (!card) return;
+            var nodeRect = localRect(card, origin);
+
+            var start = edgePoint(hubRect, nodeRect.cx, nodeRect.cy);
+            var end = edgePoint(nodeRect, hubRect.cx, hubRect.cy);
+
+            var dx = end.x - start.x;
+            var dy = end.y - start.y;
+            var len = Math.hypot(dx, dy);
+            if (len <= gap * 2) return;
+
+            start.x += (dx / len) * gap;
+            start.y += (dy / len) * gap;
+            end.x -= (dx / len) * gap;
+            end.y -= (dy / len) * gap;
+
+            var line = document.createElementNS(ns, "line");
+            line.setAttribute("x1", start.x.toFixed(2));
+            line.setAttribute("y1", start.y.toFixed(2));
+            line.setAttribute("x2", end.x.toFixed(2));
+            line.setAttribute("y2", end.y.toFixed(2));
+            // Solid stroke — gradient on vertical lines collapses to invisible
+            // with default objectBoundingBox units.
+            line.setAttribute("stroke", "oklch(0.62 0.19 250 / 0.45)");
+            line.setAttribute("stroke-width", "1.5");
+            line.setAttribute("stroke-dasharray", "5 5");
+            line.setAttribute("stroke-linecap", "round");
+            svg.appendChild(line);
+          });
+        }
+
+        var scheduled = false;
+        function scheduleDraw() {
+          if (scheduled) return;
+          scheduled = true;
+          requestAnimationFrame(function () {
+            scheduled = false;
+            draw();
+          });
+        }
+
+        window.addEventListener("resize", scheduleDraw);
+        if (typeof ResizeObserver !== "undefined") {
+          new ResizeObserver(scheduleDraw).observe(orbit);
+        }
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(scheduleDraw);
+        }
+        document.querySelectorAll(".lang-option, .lang-pill").forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            setTimeout(scheduleDraw, 0);
+            setTimeout(scheduleDraw, 50);
+          });
+        });
+
+        scheduleDraw();
       })();
     </script>
   </body>

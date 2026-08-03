@@ -3840,6 +3840,12 @@
   }
 
   @media (width >= 48rem) {
+    .md\:col-span-1 {
+      grid-column: span 1 / span 1;
+    }
+  }
+
+  @media (width >= 48rem) {
     .md\:col-span-2 {
       grid-column: span 2 / span 2;
     }
@@ -3884,6 +3890,12 @@
   @media (width >= 48rem) {
     .md\:grid-cols-4 {
       grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  @media (width >= 48rem) {
+    .md\:grid-cols-5 {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
     }
   }
 
@@ -5211,5 +5223,99 @@ html {
 @media (width >= 48rem) {
   .md\:p-14 {
     padding: calc(var(--spacing) * 14);
+  }
+}
+
+/* ========== FAQ (accordion, AMS-style) ========== */
+.faq-section {
+  padding: 7rem 0;
+  background: color-mix(in oklab, var(--surface) 50%, transparent);
+  border-block: 1px solid var(--border);
+}
+
+.faq-section-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 14px;
+}
+
+.faq-section-heading {
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  margin-bottom: 20px;
+  max-width: 720px;
+}
+
+.faq-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 48px;
+}
+
+.faq-list {
+  width: 100%;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--border);
+}
+
+.faq-q {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 0;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+  cursor: pointer;
+  text-align: left;
+  transition: color 0.2s;
+}
+
+.faq-q:hover {
+  color: var(--primary);
+}
+
+.faq-icon {
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--ink-soft);
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-a.is-open {
+  max-height: 400px;
+  padding-bottom: 20px;
+}
+
+.faq-a p {
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.75;
+}
+
+@media (max-width: 700px) {
+  .faq-cols {
+    grid-template-columns: 1fr;
+    gap: 0;
   }
 }
