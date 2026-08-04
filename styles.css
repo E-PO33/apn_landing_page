@@ -1504,6 +1504,10 @@
     overflow: hidden;
   }
 
+  .overflow-visible {
+    overflow: visible;
+  }
+
   .overflow-x-hidden {
     overflow-x: hidden;
   }
@@ -4974,20 +4978,81 @@
   }
 }
 
-/* Platform screenshot collage: stacked & centered below lg, absolute art collage at lg+ */
-@media (max-width: 63.9375rem) {
-  .platform-collage {
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+.mobile-phones {
+  width: 100%;
+}
+.mobile-phones-scroller {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  /* Hide native bar — custom one is always shown on mobile */
+  scrollbar-width: none;
+}
+.mobile-phones-scroller::-webkit-scrollbar {
+  display: none;
+  height: 0;
+}
+.mobile-phones-track {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: clamp(0.75rem, 1.5vw, 1.25rem);
+  min-width: min-content;
+  padding: 0.75rem 0 0.35rem;
+}
+.mobile-phones-track img {
+  height: clamp(18rem, 44vw, 26rem);
+  width: auto;
+  flex-shrink: 0;
+  filter: drop-shadow(0 18px 28px oklch(35% 0.06 250 / 0.22));
+}
+.mobile-phones-scrollbar {
+  display: none;
+  margin-top: 0.85rem;
+  padding-inline: 1.25rem;
+}
+.mobile-phones-scrollbar.is-active {
+  display: block;
+}
+.mobile-phones-scrollbar-track {
+  position: relative;
+  height: 12px;
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--border) 70%, var(--muted));
+  box-shadow: inset 0 1px 2px oklch(20% 0.02 260 / 0.08);
+  cursor: pointer;
+}
+.mobile-phones-scrollbar-thumb {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 8px;
+  min-width: 36px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    color-mix(in oklab, var(--primary) 70%, transparent),
+    var(--primary)
+  );
+  box-shadow: 0 1px 4px oklch(35% 0.1 250 / 0.28);
+  pointer-events: none;
+}
+@media (max-width: 47.9375rem) {
+  .mobile-phones-scrollbar {
+    display: block;
+    padding-inline: 0.75rem;
   }
-  .platform-collage .platform-card {
-    position: static;
-    width: 100%;
-    max-width: 26rem;
-    margin: 0 auto;
-    transform: none;
+  .mobile-phones-track {
+    justify-content: flex-start;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    gap: 1rem;
+  }
+  .mobile-phones-track img {
+    height: 20rem;
+    width: auto;
   }
 }
 
@@ -5318,4 +5383,222 @@ html {
     grid-template-columns: 1fr;
     gap: 0;
   }
+}
+
+.hero-copy {
+  margin-top: 0;
+}
+
+.hero-copy > * {
+  opacity: 0;
+  transform: translateX(-36px);
+  transition:
+    opacity 0.75s ease,
+    transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.hero-copy.is-visible > * {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.hero-copy.is-visible > *:nth-child(1) { transition-delay: 0.05s; }
+.hero-copy.is-visible > *:nth-child(2) { transition-delay: 0.14s; }
+.hero-copy.is-visible > *:nth-child(3) { transition-delay: 0.24s; }
+.hero-copy.is-visible > *:nth-child(4) { transition-delay: 0.34s; }
+.hero-copy.is-visible > *:nth-child(5) { transition-delay: 0.44s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-copy > * {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+.hero-devices {
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  overflow: visible;
+  padding-bottom: 20px;
+  /* margin-top: 30%; */
+}
+
+.hero-device-laptop {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 24px 48px oklch(35% 0.12 250 / 0.14));
+}
+
+.hero-devices-bottom {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(0.35rem, 1.4vw, 1rem);
+  margin-top: -4.5%;
+  margin-left: -7%;
+  position: relative;
+  z-index: 20;
+  transform: scale(1.1);
+  transform-origin: left top;
+}
+
+.hero-device-tablet,
+.hero-device-stack {
+  opacity: 0.92;
+  transition:
+    transform 1s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.85s ease;
+  will-change: transform, opacity;
+}
+
+.hero-device-tablet.is-visible,
+.hero-device-stack.is-visible {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-device-tablet,
+  .hero-device-stack {
+    opacity: 1;
+    transition: none;
+  }
+}
+
+.hero-device-tablet {
+  flex: 0 0 47%;
+  width: 47%;
+  height: auto;
+  transform: translateY(150px) rotate(-5deg);
+  transform-origin: top left;
+  filter: drop-shadow(0 16px 28px oklch(35% 0.12 250 / 0.2));
+  pointer-events: none;
+}
+
+.hero-device-tablet.is-visible {
+  transform: translateY(0) rotate(-5deg);
+}
+
+.hero-device-stack {
+  flex: 0 0 53%;
+  width: 53%;
+  height: auto;
+  transform: translateY(180px) rotate(2deg);
+  transform-origin: bottom right;
+  pointer-events: none;
+  margin-top: 25%;
+  margin-left: -50%;
+}
+
+.hero-device-stack.is-visible {
+  transform: translateY(0) rotate(2deg);
+}
+
+@media (min-width: 64rem) {
+  .hero-copy {
+    margin-top: 10%;
+  }
+
+  .hero-devices {
+    width: 112%;
+    margin-left: -5%;
+    transform: none;
+    transform-origin: center right;
+  }
+
+  .hero-devices-bottom {
+    margin-top: -5.5%;
+    gap: clamp(0.5rem, 1.2vw, 1.25rem);
+    transform: scale(1.25);
+  }
+
+  .hero-device-tablet {
+    flex-basis: 60%;
+    width: 60%;
+  }
+
+  .hero-device-stack {
+    flex-basis: 70%;
+    width: 70%;
+  }
+}
+
+@media (min-width: 80rem) {
+  .hero-copy {
+    margin-top: -70%;
+  }
+}
+
+@media (max-width: 63.99rem) {
+  .hero-devices {
+    max-width: 40rem;
+    transform: scale(1.06);
+    transform-origin: center center;
+  }
+
+  .hero-device-tablet {
+    flex-basis: 60%;
+    width: 60%;
+    transform: translateY(250px) rotate(-4deg);
+  }
+
+  .hero-device-tablet.is-visible {
+    transform: translateY(0) rotate(-4deg);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-device-tablet {
+      transform: rotate(-4deg);
+    }
+
+    .hero-device-tablet.is-visible {
+      transform: rotate(-4deg);
+    }
+  }
+
+  .hero-device-stack {
+    flex-basis: 75%;
+    width: 75%;
+  }
+
+
+  .hero-devices-bottom {
+    margin-top: -4%;
+  }
+
+}
+
+@media (max-width: 40rem) {
+  .hero-devices {
+    max-width: none;
+    transform: scale(1.02);
+  }
+
+  .hero-device-tablet {
+    flex-basis: 65%;
+    width: 65%;
+    transform: translateY(250px) rotate(-4deg);
+  }
+
+  .hero-device-tablet.is-visible {
+    transform: translateY(0) rotate(-4deg);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-device-tablet {
+      transform: rotate(-4deg);
+    }
+
+    .hero-device-tablet.is-visible {
+      transform: rotate(-4deg);
+    }
+  }
+
+  .hero-device-stack {
+    flex-basis: 75%;
+    width: 75%;
+  }
+  
 }
